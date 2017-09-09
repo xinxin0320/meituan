@@ -1,0 +1,626 @@
+/*共有的css*/
+@charset "utf-8";
+
+/*清除默认样式*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img {border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+capation,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before, q:after{content:'';}
+abbr,acronym{border:0;}
+
+img{
+	vertical-align:middle;
+}
+.fl{
+	float:left;
+	display:inline;   /*解决IE6下双倍外边距的问题*/
+}
+.fr{
+	float:right;
+	display:inline;   /*解决IE6下双倍外边距的问题*/
+}
+.bc{   /*块状元素居中对齐 block center*/
+	margin-left:auto;
+	margin-right:auto;
+}
+.clearfix{
+	overflow:hidden;
+}
+
+/*声明图标字体*/
+@font-face {
+	font-family: "iconfont";
+  src: url('font/iconfont.eot'); /* IE9*/
+  src: url('font/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('font/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('font/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+/*使用图标字体*/
+.icon{
+	font-family: "iconfont";
+}
+
+
+body{
+	/*font:font-style font-weight font-size/line-height font-family;*/
+	font: 400 14px/1.5 "Hiragino Sans GB","WenQuanYi Micro Hei",tahoma,sans-serif;
+	color:#666666;
+}
+a{
+	color:#666666;
+	text-decoration:none;
+}
+a:hover{
+	color:#2bb8aa;
+}
+.orange{
+	color:#f76120 !important;  /*让权重无穷大*/
+}
+
+.banxin{
+	width: 980px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.base{
+	background-image:url('../images/base.png');
+}
+.floor{
+	background-image:url('../images/floor.png') !important;
+}
+.slider{
+	background-image:url('../images/slider.png');
+}
+.no-bd{
+	border:0 none !important;
+}
+
+/*银星*/
+.silver-star{
+	width: 60px;
+	height: 12px;
+	line-height: 12px;
+	background: url('../images/silver-star.png');
+	display:inline-block;
+	text-align: left;
+}
+/*金星*/
+.golden-star{
+	height:12px;
+	width: 50px;  /*当评分为4.2分的时候*/
+	background: url('../images/golden-star.png');
+	display:inline-block;   /*行内块会受到行高的影响*/
+}
+
+/*用户导航start*/
+.user-nav{
+	height: 30px;
+	line-height: 30px;
+	background-color: #f9f9f9;
+	border-top:1px solid #EEEEEE;
+	border-bottom:1px solid #DDDDDD;
+}
+.user-nav-left{
+	font-size: 12px;
+}
+.user-nav-left li{
+	float: left;
+	display:inline;
+	margin-right: 8px;
+}
+.user-nav-left li a{
+	margin-right:12px;
+}
+.user-nav-left .pipe{
+	height:14px;
+	border-left:1px solid #DDDDDD;
+	display:inline-block;
+	vertical-align: top;
+	margin-top: 8px;
+}
+.user-nav-right{
+	font-size: 12px;
+}
+.user-nav-right .dropdown{
+	float: left;
+	position:relative;
+	z-index:3;
+}
+.user-nav-right .dropdown i{
+	font-style:normal;
+	width:0;
+	height: 0;
+	display:inline-block;
+	border-top:3px solid #999999;
+	border-left:3px solid transparent;
+	border-right:3px solid transparent;
+	border-bottom:3px solid transparent;
+	margin-left: 5px;
+	position:relative;
+}
+.user-nav-right .dropdown.on i{
+	border:3px solid transparent;
+	border-bottom:3px solid #2bb8aa;
+	top:-3px;
+}
+.user-nav-right .dropdown .pipe{
+	height: 14px;
+	border-left:1px solid #DDDDDD;
+	position:absolute;   /*绝对定位、固定定位和浮动后的元素都会呈现行内块的显示模式*/
+	top:8px;
+	right:-1px;
+}
+.user-nav-right .dropdown.on .pipe{
+	display:none;
+}
+.user-nav-right .dropdown a{
+	border-left:1px solid transparent;
+	border-right:1px solid transparent;
+	padding-left:15px;
+	padding-right:8px;
+	height: 30px;  /*宽高只对行内块和块状元素起作用*/
+	display:inline-block;
+	z-index:2;
+	position:relative;  
+}
+.user-nav-right .dropdown.on a{   /*鼠标移上的状态*/
+	background-color: #fff;
+	border-color:#dddddd;
+}
+
+.user-nav-right .dropdown .submenu{
+	border: 1px solid #dddddd;
+	background-color: #fff;
+	padding:10px 0;
+	position:absolute;
+	right:0;
+	top:29px;
+	z-index:1;
+	display:none;
+}
+.user-nav-right .dropdown.on .submenu{
+	display:block;
+}
+.user-nav-right .dropdown .submenu a{
+	border:0 none;
+	padding:0;
+	padding-left:15px;
+	padding-right:19px;
+	display:block;    /*块状元素的宽度+左右padding+左右border+左右Margin=父盒子的宽度*/
+	white-space: nowrap;   /*让里面的文字不换行*/
+}
+.user-nav-right .dropdown .submenu a:hover{
+	background-color: #F9F9F9;
+}
+.user-nav-right .dropdown .submenu.no-record{   /*没有购物记录或没有最近浏览记录的样式*/
+	width: 220px;
+	height: 90px;
+	text-align: center;
+	line-height: 90px;
+}
+.user-nav-right .dropdown .submenu.record{  /*有购物记录或没有最近浏览记录的样式*/
+	width: 220px;
+
+}
+.user-nav-right .dropdown .submenu.record li{
+	height: 63px;
+	border-bottom:1px dashed #EEEEEE;
+	padding:12px 16px 0;
+	line-height: 16px;
+}
+/*在IE6中，只有超链接a可以加hover；在IE7及以后，任何元素后面都可以加hover,表示当鼠标移上的状态*/
+.user-nav-right .dropdown .submenu.record li:hover{
+	background-color: #F9F9F9;
+}
+.user-nav-right .dropdown .submenu.record a{
+	padding:0;
+	display:inline;
+	white-space:normal;   /*允许自动换行*/
+}
+.submenu.record img{
+	float: left;   /*实现文字环绕图片的效果*/
+	margin-right: 10px;
+}
+.submenu.record .price{
+	color:#F76120;
+	font-weight: bold;
+	display:inline-block !important;
+	margin-top: 4px;
+}
+.submenu.record del{
+	color:#999999;
+	font-weight: normal;
+	margin-left:10px;
+}
+.user-nav-right .dropdown .submenu.record a{
+	background-color: transparent !important;
+}
+/*用户导航end*/
+
+/*搜索框部分start*/
+.search-wrapper{
+	height: 85px;
+	padding-top:20px;
+}
+.search-wrapper h1{
+	width: 82px;
+	height: 54px;
+}
+.search-wrapper h1 a{
+	width:100%;
+	height:100%;
+	display:block;
+	background-position:0 -896px;
+	text-indent:-999em;
+	overflow:hidden;
+}
+.city-info{
+	margin-left: 10px;
+	margin-top: 3px;
+	width:243px;  /*内容宽度，不包括margin或Padding或border*/
+}
+.city-info h2{
+	color:#333;
+	font-weight: bold;
+	font-size: 16px;
+}
+.city-info a{
+	color:#999999;
+	font-size: 12px;
+	border:1px solid #eeeeee;
+	padding:2px 5px;
+}
+.search-example{
+	margin-top:8px;
+}
+.search-example a{
+	font-size: 12px;
+	margin-right: 16px;
+}
+.search-box form{
+	height: 42px;
+	/*overflow:hidden;*/
+}
+.search-box form div{
+	width: 64px;
+	height: 38px;
+	border: 2px solid #2DB8AD;
+	border-right:0 none;
+	position:relative;
+	overflow:hidden;
+	/*overflow:visible;*/   /*默认，是溢出可见的*/
+}
+.search-box form div.on{
+	overflow:visible;
+}
+#q{
+	height: 38px;
+	width: 360px;
+	border:0 none;
+	border-top: 2px solid #2DB8AD;
+	border-bottom: 2px solid #2DB8AD;
+	color:#a9a9a9;
+	outline:0 none;
+	font-size: 14px;
+	text-indent: 5px;
+	float: left;   /*浮动的元素会呈现行内块的显示模式。不受空格的影响*/
+}
+.search-btn{
+	width: 66px;
+	height: 42px;
+	background-color: #2DB8AD;
+	border:0 none;
+	outline:0 none;
+	color:white;
+	font-size: 14px;
+	float: left;
+}
+.search-box ul{
+	width: 62px;
+	line-height: 38px;
+	border: 1px solid #dddddd;
+	border-top:0 none;
+	position:absolute;
+	left:0;
+	top:0;
+	background-color: #fff;
+}
+.search-box ul li{
+	text-indent: 15px;
+	cursor:pointer;
+}
+.search-box ul li:hover{
+	background-color: #f9f9f9;
+}
+.search-box span{
+	width: 0;
+	height: 0;
+	border:3px solid transparent;
+	border-top-color:#666666;
+	position:absolute;  /*定位后的元素会呈现行内块的显示模式*/
+	right: 9px;
+	top: 17px;
+}
+.search-box .on span{
+	border:3px solid transparent;
+	border-bottom-color:#2bb8aa;
+	top:14px;
+}
+/*搜索框部分end*/
+
+/*导航部分start*/
+.nav-wrapper{
+	height: 40px;
+	position:relative;
+	z-index:2;
+}
+.nav{
+	margin-left:246px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #2BB8AA;
+}
+.nav li{
+	float: left;
+	display:inline;
+}
+.nav li a{
+	height: 40px;
+	color:white;
+	font-size: 16px;
+	font-weight: bold;
+	padding:0 22px;
+	display:block;
+}
+.nav li a:hover{
+	background-color: #00c3b0;
+}
+/*导航部分end*/
+
+/*分类部分start*/
+.category-wrapper{
+	width:246px;
+	/*height: 40px;*/
+	position:absolute;
+	left:0;
+	top:0;
+}
+.category-all{
+	width:246px;
+	height: 40px;
+	line-height: 40px;
+	background-position:0 -31px;
+	color:white;
+	font-size: 16px;
+	text-indent: 10px;
+}
+#category{
+	border-left:1px solid #eeeeee;
+	border-bottom:1px solid #eeeeee;
+	background-color: #FAFAFA;
+	position:relative;
+}
+#category.active{
+	border-color:#ddd;
+}
+#category li{
+	height: 53px;
+	border-right:1px solid #eeeeee;
+	font-size: 12px;
+}
+#category li.on{
+	background-color: #fff;
+	border-color:white;
+}
+#category li p{
+	border-bottom:1px solid #eee;
+	height:52px;
+	line-height: 52px;
+	margin:0 10px;
+	text-align: right;   /*块状元素让其内部的行内元素和行内块右对齐*/
+}
+#category.active li p{
+	margin-right:0;
+	padding-right:10px;
+}
+#category li a{
+	color:#999999;
+	margin-right: 5px;
+}
+#category li a:hover{
+	color:#2bb8aa;
+}
+#category li strong{
+	float: left;
+}
+#category li strong a{
+	color:#333;
+	font-size: 16px;
+	font-weight: bold;
+	margin-right: 0;
+}
+#category li a.icon{
+	color:#eee;
+}
+#category li.on a.icon{
+	/*display:none;*/
+	visibility:hidden;
+}
+#category li .submenu{
+	height: 477px;
+	position:absolute;
+	left:245px;
+	top:0;
+	background-color: #fff;
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	white-space:nowrap;
+	padding-left: 20px;
+	display:none;
+}
+#category li.on .submenu{
+	display:block;
+}
+#category li .submenu dl{
+	display:inline-block;   /*行内元素和行内块默认是基线对齐*/
+	line-height: 24px;
+	padding-right: 46px;
+	vertical-align:top;   /*改为顶端对齐*/
+}
+#category li .submenu dt{
+	height: 62px;
+	line-height: 62px;
+}
+#category dt a{
+	font-size: 16px;
+	color:#333;
+	font-weight: bold;
+}
+
+/*分类部分end*/
+
+/*页脚导航start*/
+#footer-nav{
+
+	font-size: 12px;
+}
+#footer-nav ul{
+	border-left:1px solid #eee;
+	height: 24px;
+	margin-top: 50px;
+}
+#footer-nav li{
+	width: 89px;
+	height: 23px;
+	border-top:1px solid #eee;
+	border-right:1px solid #eee;
+	float: left;
+	display:inline;
+	text-align: center;
+	line-height: 23px;
+	cursor:pointer;
+}
+#footer-nav li:hover{
+	background-color: #eeeeee;
+}
+#footer-nav li.cur{   /*当前状态的li*/
+	background-color: #eee;
+}
+#footer-nav div{
+	border: 1px solid #eee;
+	padding:15px;
+	display:none;
+}
+#footer-nav div.cur{   /*和当前li对应的div*/
+	display:block;
+}
+#footer-nav div a{
+	width: 90px;
+	height: 21px;
+	line-height: 21px;
+	display:inline-block;
+	overflow:hidden;
+	text-overflow:ellipsis;   /*ellipsis表示省略号*/
+	white-space:nowrap;    /*text-overflow:ellipsis需要配合white-space:nowrap一起使用*/
+}
+/*页脚导航end*/
+
+.footer2 {
+    border-top: 1px solid #dddddd;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/*侧边栏start*/
+.aside-bar{
+	position:fixed;
+	right:10px;
+	bottom:19px;
+	width: 41px;
+	border: 1px solid #eeeeee;
+	border-bottom:0 none;
+	line-height: 16px;
+}
+.aside-bar li{
+	width: 41px;
+	height: 41px;
+	border-bottom: 1px solid #eeeeee;
+}
+.aside-bar a span{
+	width: 41px;
+	height: 41px;
+	background-image: url('../images/aside.png');
+	display:block;
+}
+.aside-bar a:hover span{
+	display:none;
+}
+.aside-bar .toTop span{
+	background-position: 0 -88px;
+}
+.aside-bar .poll span{
+	background-position: 0 -132px;
+}
+.aside-bar .help span{
+	background-position: 0 -44px;
+}
+.aside-bar a em{
+	width: 25px;
+	height: 32px;
+	display:block;
+	background-color: #bbbbbb;
+	color:white;
+	font-size: 12px;
+	padding-top:5px;
+	padding-bottom:4px;
+	padding-left:8px;
+	padding-right:8px;
+	display:none;
+}
+.aside-bar a:hover em{
+	display:block;
+}
+.toTop{
+	display:none;
+}
+/*侧边栏end*/
+
+/*图片的延迟加载start*/
+.section img{
+	background: url('../images/bg.gif') no-repeat center center;
+}
+/*图片的延迟加载end*/
+
+/*包裹大图的样式start*/
+.img-wrapper{
+	position:relative;
+}
+.img-wrapper ul{
+	position:absolute;
+	left:0px;
+	top:-4px;
+}
+.img-wrapper li{
+	width: 43px !important;
+	height: 40px !important;
+	background-position:0 -493px;
+	padding:0;
+	border:0 none;
+	text-indent: -999em;
+	overflow:hidden;
+	float: left;
+	padding:0 !important;
+}
+.dai{
+	background-position:0 -619px !important;
+}
+.mian{
+	background-position:0 -451px !important;
+}
+/*包裹大图的样式start*/

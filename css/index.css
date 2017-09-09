@@ -1,0 +1,322 @@
+/*首页的私有css*/
+@charset "utf-8";
+
+.banxin{
+	width: 1170px;
+}
+
+/*主体部分start*/
+.main-wrapper{
+	height: 477px;
+}
+.main-right{
+	width: 197px;
+	border: 1px solid #eeeeee;
+	border-top:0 none;
+}
+.qr{
+	border-bottom:1px solid #eee;
+}
+.main-center{
+	width:689px;   /*内容宽度*/
+	height: 477px;
+	padding-left:18px;
+	padding-right:18px;
+	font-size: 12px;
+}
+.main-center li{
+	height:52px;
+	line-height: 24px;
+	border-bottom:1px solid #eee;
+	position:relative;
+}
+.main-center li h3{
+	width:83px;
+	color:#999999;
+}
+.main-center h3 span{
+	color:#f1463b;
+	font-size: 16px;
+	margin-right: 5px;
+}
+.main-center li p{
+	width:601px;
+	height: 24px;  /*默认只显示一行*/
+	overflow:hidden;
+}
+.main-center li div.on p{   /*当鼠标移上div的时候，p的样式*/
+	height:48px;  /*需要显示两行*/
+}
+.main-center li a{
+	margin-right: 20px;
+	display:inline-block;
+}
+.main-center li div{
+	width: 689px;
+	/*border:1px solid #eee;   鼠标移上“更多”的时候，显示div的边*/
+	border:1px solid transparent;   /*边中会带背景,padding中带背景，margin不带背景*/
+	overflow:hidden;
+	position:absolute;   /*绝对定位的元素呈现行内块的显示模式*/
+	left:-10px;
+	top:-1px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:13px;
+	padding-bottom: 13px;
+}
+.main-center li div.on{
+	border:1px solid #eee;   /*鼠标移上“更多”的时候，显示div的边*/
+	background-color: #fff;
+	z-index:2;
+}
+#show-all{
+	width: 42px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #eee;
+	position:absolute;
+	right:8px;
+	top:15px;
+	margin-right: 0;
+	text-indent: 3px;
+}
+#show-all i{
+	width: 0;
+	height: 0;
+	display:inline-block;
+	border:3px solid transparent;
+	border-top-color:#666666;
+	margin-left: 2px;
+}
+#show-all:hover i{
+	border-top-color:#2bb8aa;
+}
+/*主体部分end*/
+
+/*焦点图start*/
+#banner{
+	width: 689px;
+	height: 318px;
+	position:relative;
+	overflow:hidden;
+}
+#banner ul{
+	width:7000px;   /*width只要大于689*5*/
+	height: 318px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+#banner li{   /*li表示一组图片*/
+	width: 689px;
+	height: 318px;
+	float: left;
+	white-space:nowrap;
+	overflow:hidden;
+}
+#banner span{
+	width: 30px;
+	height: 39px;
+	background: url('../images/slider.png') 0 -150px;
+	position:absolute;   /*绝对定位的元素呈现行内块的显示模式*/
+	left:0;
+	top:50%;
+	margin-top:-20px;
+	cursor:pointer;
+	color:white;
+	line-height: 39px;
+	font-size: 20px;
+	text-indent: 2px;
+	display:none;
+}
+#banner img{
+	border-right:1px solid #eeeeee;
+}
+#banner span.right-btn{
+	width:60px;
+	background-position:0 -228px;
+	right:0;
+	left:auto;
+}
+/*焦点图end*/
+
+/*推荐分类商品列表start*/
+.section-title{
+	height: 42px;
+	padding-top: 30px;
+}
+.section-title h3{
+	font-size: 20px;
+}
+.section-title h3 span{
+	width: 38px;
+	height: 29px;
+	background: url('../images/category-list-bg.png');
+	display:inline-block;
+	color:white;
+	text-indent: 10px;
+	margin-right: 6px;
+}
+.section-title li{
+	float: left;
+	display:inline;
+	border-right:1px solid #dddddd;
+	padding-left:9px;
+	padding-right: 9px;
+}
+.section-title li.all{
+	border-right:0 none;
+	margin-left: 12px;
+	margin-right: 1px;
+}
+.section{
+	border-top:1px solid #eee;
+	border-right:1px solid #eee;
+	overflow:hidden;
+}
+.section li{
+	width: 261px;
+	height: 299px;
+	border-left:1px solid #eee;
+	border-bottom:1px solid #eee;
+	float: left;
+	display:inline;
+	padding:12px 15px 0;
+}
+
+.section a h4{
+	font-weight: bold;
+	margin-top:12px;
+	margin-bottom: 5px;
+}
+.section a p{
+	color:#999999;
+	overflow:hidden;   /*需要知道宽高*/
+	white-space:nowrap;
+}
+.section a:hover h4{
+	color:#333333;
+}
+.section a:hover p{
+	color:#333333;
+}
+.section h5{
+	color:#999999;
+	font-size: 12px;
+	margin-top:8px;
+	border-bottom:1px dotted #dddddd;
+	padding-bottom:2px;
+}
+.section h5 strong{
+	color:#f76120;
+	font-size: 20px;
+	font-family: 'Microsoft Yahei';
+	margin-right: 6px;
+}
+.section h5 b{
+	font-weight: normal;
+	float: right;
+	margin-top: 8px;
+}
+.section h6{
+	text-align: right;  /*让块元素里面的行内元素和行内块右对齐*/
+	font-size: 12px;
+	margin-top:8px;
+}
+.section h6 a{
+	color:#999999;
+}
+.section h6 a:hover{
+	color:#2bb8aa;
+}
+.section .silver-star{
+	margin-right: 10px;
+}
+.section-footer{
+	height: 48px;
+	background-color: #F6F6F6;
+	text-align: center;
+	line-height: 48px;
+	margin-top: -1px;
+}
+/*推荐分类商品列表end*/
+
+/*名点抢购start*/
+.brand{
+	border:1px solid #eee;
+	overflow:hidden;
+}
+.brand li{
+	width: 233px;
+	border-right:1px solid #eee;
+	float: left;
+	display:inline;
+}
+.brand-title{
+	margin-bottom: 4px;
+}
+.brand-title h3 span{   /*层叠151行：权重相同的时候会层叠*/
+	width: 36px;
+	height: 40px;
+	background-position:0 -321px;
+	margin-right: 4px;
+}
+.brand-title strong{
+	vertical-align:top;   /*vertical-align对行内元素和行内块起作用，对块状元素不起作用*/
+	margin-top:8px;  /*margin-top和margin-bttom padding-top和padding-bottom对行内元素不起作用，只对行内块和块状元素起作用*/
+	display:inline-block;
+}
+.brand-title h3 div{
+	width: 219px;
+	height: 34px;
+	border:1px solid #efefef;
+	display:inline-block;
+	padding-top:7px;
+	padding-left:6px;
+	position:relative;
+}
+.brand-title h3 b{
+	width: 49px;
+	height: 28px;
+	background-position: 0 -470px;
+	float: left;
+	margin-right: 10px;
+}
+.brand-title div span{
+	width: 20px;
+	height: 28px;
+	background-position: 0 -82px;
+	font-size: 18px;
+	text-align: center;
+	line-height: 28px;
+	text-indent: 0;
+	float: left;
+	margin-right: 2px;
+}
+.brand-title h3 i{
+	font-style: normal;
+	width: 2px;
+	height: 11px;
+	background-position: 0 -363px;
+	float: left;   /*浮动后的元素呈现行内块的显示模式*/
+	margin: 9px 6px 0 4px;
+}
+.brand-title del{
+	width: 0;
+	height: 0;
+	border:6px solid transparent;
+	border-right-color:#eee;
+	position:absolute;
+	left:-13px;
+	top:12px;
+}
+.brand-title s{
+	width: 0;
+	height: 0;
+	border:6px solid transparent;
+	border-right-color:white;
+	position:absolute;
+	left:-12px;
+	top:12px;
+}
+/*名点抢购end*/

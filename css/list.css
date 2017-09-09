@@ -1,0 +1,163 @@
+/*列表页的私有css*/
+@charset "utf-8";
+
+#category{
+	display:none;
+}
+
+/*列表主体部分start*/
+.list-main{
+	overflow:hidden;
+}
+.goods-list{
+	width: 714px;
+	float: left;
+	display:inline;
+}
+.list-right {
+    width: 240px;
+    float: right;
+    display: inline;
+}
+/*列表主体部分end*/
+
+/*列表页广告start*/
+.list-ad{
+	border: 1px solid #eeeeee;
+	margin-top: 10px;
+	position:relative;
+}
+.list-ad span{
+	position:absolute;
+	top:0px;
+	right:6px;
+	color:#30a8a1;
+	font-size: 20px;
+	cursor:pointer;
+}
+.list-ad span:hover{
+	color:#2e515c;
+}
+/*列表页广告end*/
+
+
+
+/*列表标题的选项start*/
+.list-title{
+    border: 1px solid #EEEEEE;
+    height: 29px;
+    line-height: 29px;
+    font-size: 12px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.list-title a{
+	color:#333333;
+}
+.list-title li{
+    height: 29px;
+	float: left;
+	display:inline;
+	border-right: 1px solid #eee;
+	position:relative;
+}
+.list-title li a{
+	padding:0 26px;
+	height: 27px;
+	display:block;
+	/*border-top:2px solid #2BB8AA;*/
+	border-top:2px solid transparent;
+	line-height: 27px;
+}
+.list-title li a.cur{
+	border-top:2px solid #2BB8AA;
+	color:#2BB8AA;
+}
+.list-title li a:hover{
+	color:#2BB8AA;
+}
+.list-title li a.default{
+	padding:0 18px;
+}
+.list-title span{
+	width: 7px;
+	height: 8px;
+	position:absolute;
+	top:12px;
+	right:14px;
+}
+.arrow-down{
+	background-position: 0 -820px;
+}
+a:hover .arrow-down{
+	background-position: 0 -810px;
+}
+a.cur .arrow-down{
+	background-position: 0 -810px;
+}
+.arrow-up{
+	background-position: 0 -21px;
+}
+a:hover .arrow-up{
+	background-position: 0 -11px;
+}
+a.cur .arrow-up{
+	background-position: 0 -11px;
+}
+.list-title .tri{
+	width: 0;
+	height: 0;
+	border:4px solid transparent;
+	border-top-color:#999999;
+	right:15px;
+	top:13px;
+}
+.list-title a:hover .tri{
+	border:4px solid transparent;
+	border-bottom-color:#2BB8AA;
+	top:9px;
+}
+#price-range ul{
+	position:absolute;
+	top:29px;
+	left:-1px;
+	right:-1px;  /*left和right搭配使用的时候，不要控制width。如果width和left right一起使用，那么right会自动失效*/
+	background-color: #fff;
+	border: 1px solid #eee;
+	border-top:0 none;
+	white-space:nowrap;
+	text-align: center;
+	padding:4px 0;
+	display:none;
+}
+#price-range.on ul{
+	display:block;
+}
+#price-range li{
+	float:none;
+	border:0 none;
+}
+#price-range li a:hover{
+	background-color: #eeeeee;
+}
+#price-range ul a{
+	padding:0;
+}
+.list-title div{
+	padding-left: 20px;
+}
+.list-title div a{
+	background-position: -2px -95px;
+	padding-left: 13px;
+	margin-right: 18px;
+}
+.list-title div a.checked{   /*复选框选上的状态*/
+	background-position: -2px -74px;
+}
+/*列表标题的选项end*/
+
+.aside-bar{
+	right:auto;
+	left:50%;
+	margin-left: 500px;
+}
